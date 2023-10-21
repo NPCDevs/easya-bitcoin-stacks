@@ -17,14 +17,10 @@
 ;;
 
 ;; data maps
-;;
 
 ;; public functions
-;;
 
 ;; read only functions
-;;
 
 ;; private functions
 ;;
-
