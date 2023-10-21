@@ -9,6 +9,11 @@ requirements = []
 path = 'contracts/CrowdFundingCollective.clar'
 clarity_version = 2
 epoch = 2.4
+
+[contracts.Pot]
+path = 'contracts/Pot.clar'
+clarity_version = 2
+epoch = 2.4
 [repl.analysis]
 passes = ['check_checker']
 
