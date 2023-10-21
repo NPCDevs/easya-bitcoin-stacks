@@ -6,7 +6,7 @@ Clarinet.test({
     name: "Ensure that money left expected amount from user",
     fn(chain: Chain, accounts: Map<string, Account>) {
       const wallet_1 = accounts.get("wallet_1")!;
-      const contractAddress = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.CrowdFundingCollective"; // replace with your contract address
+      const contractAddress = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.Pot"; // replace with your contract address
   
       const initialBalanceInCollectiveInsuranceWallet1 = chain.callReadOnlyFn(contractAddress, "get-balance", [], wallet_1.address);
       assertEquals(initialBalanceInCollectiveInsuranceWallet1.result, 'u0');
@@ -31,4 +31,3 @@ Clarinet.test({
   
     },
   });
-  
