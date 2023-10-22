@@ -1,45 +1,24 @@
+;; Pot Contract
+(define-data-var users (list 20 principal) ())  ;; Assuming max 20 users for illustration
 
-;; title: CrowdFundingCollective
-;; version:
-;; summary:
-;; description:
-
-;; traits
-;;
-
-;; token definitions
-;; 
-
-;; constants
-;;
-
-;; data vars
-;;
-
-;; data maps
-;; DEPOSITS: containg mapping Account - Balance
-(define-map deposits {account: principal} {balance: uint})
-
-;; public functions
-;; DEPOSITS: Deposit amount into contract (sender)
-(define-public (deposit (amount uint))
-  (begin
-    (unwrap-panic (stx-transfer? amount tx-sender (as-contract tx-sender)))
-    (let ((current-balance (get balance (map-get? deposits {account: tx-sender}))))
-      (if (is-none current-balance)
-        (map-set deposits {account: tx-sender} {balance: amount})
-        (map-set deposits {account: tx-sender} {balance: (+ amount (unwrap-panic current-balance))}))
-      (ok amount))))
-  
-
-;; read only functions
-;; DEPOSITS: Get balance of account (sender)
-(define-read-only (get-balance)
-  (default-to u0 (get balance (map-get? deposits {account: tx-sender}))))
+(define-data-var transactions (list 50 (tuple (user principal) (type (string-ascii 10)) (amount uint))) ()) ;; Assuming max 50 transactions for illustration
 
 
-;; private functions
-;;
+(define-public (join (user principal))
+    (var-set users (append (var-get users) (list user)))
+    ok
+)
 
+(define-public (deposit (amount int))
+    (var-set transactions (append (var-get transactions) (list {user: tx-sender, type: "deposit", amount: amount})))
+    ok
+)
 
+(define-public (withdraw (amount int))
+    (var-set transactions (append (var-get transactions) (list {user: tx-sender, type: "withdraw", amount: amount})))
+    ok
+)
 
+(define-public (get-state)
+    (ok (var-get transactions))
+)

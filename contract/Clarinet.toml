@@ -5,13 +5,23 @@ authors = []
 telemetry = true
 cache_dir = './.cache'
 requirements = []
-[contracts.CrowdFundingCollective]
-path = 'contracts/CrowdFundingCollective.clar'
+[contracts.MCrowdFundingCollective]
+path = 'contracts/MCrowdFundingCollective.clar'
 clarity_version = 2
 epoch = 2.4
 
 [contracts.Pot]
 path = 'contracts/Pot.clar'
+clarity_version = 2
+epoch = 2.4
+
+[contracts.Request]
+path = 'contracts/Request.clar'
+clarity_version = 2
+epoch = 2.4
+
+[contracts.User]
+path = 'contracts/User.clar'
 clarity_version = 2
 epoch = 2.4
 [repl.analysis]
