@@ -1,0 +1,75 @@
+.wrapper {
+  border-radius: 8px;
+  transition: background-color 0.1s ease-in-out;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  user-select: none;
+  .address {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    // margin-right: 16px;
+  }
+  .ava {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: gray;
+    // margin-left: 16px;
+  }
+  &:hover {
+    background-color: #6e6e6e;
+  }
+}
+
+.connectBtn {
+  background-color: #4989f0;
+  border-radius: 12px;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 18px;
+}
+
+.popup {
+  position: absolute;
+  background-color: #414141;
+  border: 1px solid #6e6e6e;
+  //   height: 400px;
+  right: 0;
+  top: 90px;
+  padding: 26px 18px;
+  padding-bottom: 40px;
+  border-radius: 12px;
+  color: #f5f7fa;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 32px;
+    .accountDetails {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      .ava {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: gray;
+      }
+    }
+  }
+  .disconnectBtn {
+    background-color: #727f93;
+    border: 1px solid #8b96a8;
+    border-radius: 8px;
+    color: #f5f7fa;
+    padding: 8px 16px;
+    font-size: 18px;
+    width: 150px;
+  }
+}

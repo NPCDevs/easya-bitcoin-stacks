@@ -1,0 +1,49 @@
+.wrapper {
+  color: #b2b3b8;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .viewAll {
+      font-size: 16px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  .list {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.requestWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .info {
+    .title {
+      color: #f5f7fa;
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .address {
+      color: #777;
+      font-size: 16px;
+      font-weight: normal;
+    }
+  }
+  .status {
+    border: 1px solid #777;
+    border-radius: 8px;
+    padding: 4px 8px;
+    width: 120px;
+    text-align: center;
+  }
+}
